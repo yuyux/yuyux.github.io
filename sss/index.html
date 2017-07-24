@@ -1,22 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>今天天气不错</title>
-  <style>
-    *{
-      margin: 0;
-      padding: 0;
-    }
-    #box{
-      width: 100px;
-      height: 100px;
-      background-color: pink;
-      opacity: 0.7;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        select {
+            width: 150px;
+            background-color: #0099cc;
+        }
+    </style>
 </head>
 <body>
-<div id="box"></div>
+<!--左边的下拉菜单   multiple：可以让下拉菜单多选 -->
+<select id="leftSel" size="10" multiple="multiple">
+    <option>苹果</option>
+    <option>香蕉</option>
+    <option>西瓜</option>
+    <option>牛油果</option>
+    <option>西红柿</option>
+</select>
+
+<!--四个选择按钮位置-->
+<input type="button" value=">>" id="allRight">
+<input type="button" value="<<" id="allLeft">
+<input type="button" value=">" id="right">
+<input type="button" value="<" id="left">
+
+<!--右边的下拉菜单-->
+<select id="rightSel" size="10" multiple="multiple">
+</select>
+
+<script>
+    //1 获取元素
+    var leftBtn = document.getElementById("left");
+    var rightBtn = document.getElementById("right");
+    var leftSel = document.getElementById("leftSel");//左侧下拉菜单
+    var rightSel = document.getElementById("rightSel");//右侧下拉菜单
+    var leftOpts = leftSel.children;//左侧的所有选项
+    var rightOpts = rightSel.children;//又侧的所有选项
+    var allRight = document.getElementById("allRight");
+    var allLeft = document.getElementById("allLeft");
+
+
+    //右移按钮操作
+    //    rightBtn.onclick = function () {
+    //        for (var i = 0; i < leftOpts.length; i++) {
+    //            if (leftOpts[i].selected == true) {
+    //                rightSel.appendChild(leftOpts[i]);
+    //                i--;
+    //            }
+    //        }
+    //    };
+    rightBtn.onclick = function () {
+        for (var i = leftOpts.length-1; i >= 0; i--) {
+            if (leftOpts[i].selected == true) {
+                rightSel.appendChild(leftOpts[i]);
+            }
+        }
+    };
+    //左移按钮操作
+    //    leftBtn.onclick = function () {
+    //        for (var i = 0; i < rightOpts.length; i++) {
+    //            if (rightOpts[i].selected == true) {
+    //                leftSel.appendChild(rightOpts[i]);
+    //                i--;
+    //            }
+    //        }
+    //    };
+    leftBtn.onclick = function () {
+        for (var i = rightOpts.length-1; i >= 0; i--) {
+            if (rightOpts[i].selected == true) {
+                leftSel.appendChild(rightOpts[i]);
+
+            }
+        }
+    };
+
+    allRight.onclick = function () {
+        for (var i = 0; i < leftOpts.length;) {
+          rightSel.appendChild(leftOpts[i]);
+        }
+    };
+    allLeft.onclick = function () {
+        for (var i = 0; i < rightOpts.length;) {
+            leftSel.appendChild(rightOpts[i]);
+        }
+    };
+</script>
+
 </body>
 </html>
