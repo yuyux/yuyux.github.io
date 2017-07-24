@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>first | yuyux</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="我开始学习前端了，啦啦啦人工智障">
+  <meta name="description" content="怎么编写对象1. js中最简单的对象写法就是字面量写法：12345var a = &amp;#123;    name:&apos;Sanji&apos;,    age:19,    gender:&apos;男&apos;&amp;#125;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="first">
-<meta property="og:url" content="http://yoursite.com/2012/12/12/hello-world/index.html">
+<meta property="og:url" content="http://yoursite.com/2012/12/12/创建对象/index.html">
 <meta property="og:site_name" content="yuyux">
-<meta property="og:description" content="我开始学习前端了，啦啦啦人工智障">
+<meta property="og:description" content="怎么编写对象1. js中最简单的对象写法就是字面量写法：12345var a = &amp;#123;    name:&apos;Sanji&apos;,    age:19,    gender:&apos;男&apos;&amp;#125;">
 <meta property="og:locale" content="english">
-<meta property="og:updated_time" content="2017-07-23T09:15:19.966Z">
+<meta property="og:updated_time" content="2017-07-24T15:44:41.201Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="first">
-<meta name="twitter:description" content="我开始学习前端了，啦啦啦人工智障">
+<meta name="twitter:description" content="怎么编写对象1. js中最简单的对象写法就是字面量写法：12345var a = &amp;#123;    name:&apos;Sanji&apos;,    age:19,    gender:&apos;男&apos;&amp;#125;">
   
     <link rel="alternative" href="/atom.xml" title="yuyux" type="application/atom+xml">
   
@@ -160,7 +160,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-hello-world" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-创建对象" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -172,7 +172,7 @@
   
 
         
-        <a href="/2012/12/12/hello-world/" class="archive-article-date">
+        <a href="/2012/12/12/创建对象/" class="archive-article-date">
   	<time datetime="2012-12-11T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2012-12-12</time>
 </a>
         
@@ -180,8 +180,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="我开始学习前端了，啦啦啦"><a href="#我开始学习前端了，啦啦啦" class="headerlink" title="我开始学习前端了，啦啦啦"></a>我开始学习前端了，啦啦啦</h1><h2 id="人工智障"><a href="#人工智障" class="headerlink" title="人工智障"></a>人工智障</h2><a id="more"></a>
-<p>今天也要努力做个智障，加油！！！<br>太阳当空照，我去上学校，小鸟说早早早，你为什么lalalalala…      </p>
+        <h1 id="怎么编写对象"><a href="#怎么编写对象" class="headerlink" title="怎么编写对象"></a>怎么编写对象</h1><h3 id="1-js中最简单的对象写法就是字面量"><a href="#1-js中最简单的对象写法就是字面量" class="headerlink" title="1. js中最简单的对象写法就是字面量"></a>1. js中最简单的对象写法就是字面量</h3><p>写法：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = &#123;</div><div class="line">    <span class="attr">name</span>:<span class="string">'Sanji'</span>,</div><div class="line">    <span class="attr">age</span>:<span class="number">19</span>,</div><div class="line">    <span class="attr">gender</span>:<span class="string">'男'</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p>键值对中，值如果为非函数，称其为属性，如果值为函数，就是方法。<br><strong>使用字面量描述对象有一些缺点：无法复用</strong>    </p>
+<h3 id="2-工厂设计模式（factory）"><a href="#2-工厂设计模式（factory）" class="headerlink" title="2. 工厂设计模式（factory）"></a>2. 工厂设计模式（factory）</h3><p>所谓工厂设计模式就是创建一个创建对象的函数，凡是要对象的时候，调用该函数，这个函数即工厂函数。<br>创建一个生成食品的工厂<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">creatFood</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> food = &#123;&#125;;</div><div class="line">    food.name = <span class="string">"hamburger"</span>;</div><div class="line">    food.date = <span class="string">"2017"</span>;</div><div class="line">    <span class="keyword">return</span> food;</div><div class="line">&#125;</div><div class="line">creatFood();</div></pre></td></tr></table></figure></p>
+<p>在使用工厂作为创建对象的手段时，有几个名字是固定的，一个是create,一个是factory</p>
+<h3 id="3-利用构造函数来创建"><a href="#3-利用构造函数来创建" class="headerlink" title="3. 利用构造函数来创建"></a>3. 利用构造函数来创建</h3><p>使用new来创建对象，将对象传递给构造函数的this，在构造函数中利用this.xxx = vvv形式给对象增加成员。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Food</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.name = <span class="string">"hanburger"</span>,</div><div class="line">    <span class="keyword">this</span>.date = <span class="string">"2017"</span>,</div><div class="line">    <span class="keyword">this</span>.comment = <span class="string">"delicious"</span></div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> food = <span class="keyword">new</span> Food();</div></pre></td></tr></table></figure></p>
+<p>在构造函数中约定了我的对象应该具有什么成员<br><strong>注：</strong><br>在实际开发过程中如果是简单的形式处理对象，而不需要考虑复用直接使用字面量，如果对象比较复杂，可以考虑试用工厂，如果需要考虑继承等其他方面对象的特征，就应该使用构造函数</p>
 
       
 
@@ -261,7 +266,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2012/12/12/hello-world/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2012/12/12/创建对象/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -275,15 +280,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2012/12/12/创建对象/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          first
-        
-      </div>
-    </a>
   
+    <a href="/2012/12/12/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">first</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
